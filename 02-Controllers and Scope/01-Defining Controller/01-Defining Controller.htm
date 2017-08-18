@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body ng-app="sample">
+    <div ng-controller="emp as o">
+        <!-- 'o' is an instance of 'emp' -->
+        Hello {{o.Name}}, looks like you earn {{this.Sal}} per month!
+    </div>
+</body>
+<!--
+<body ng-app="sample" ng-controller="emp as o">
+    Hello {{o.Name}}!
+</body>
+-->
+
+</html>
