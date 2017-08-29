@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="myModule">
+    <h1>Handling events in AngularJS</h1>
+    <div ng-controller="myController">
+        <br> Name :
+        <input type="text" ng-model="myName" ng-blur="displayValue(myName)" />
+        <br/>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Like/Dislike</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="technology in technologies">
+                    <td> {{ technology.name }}
+
+                    </td>
+                    <td style="text-align:center"> {{ technology.likes }} </td>
+                    <td style="text-align:center"> {{ technology.dislikes }} </td>
+                    <td>
+                        <input type="button" ng-click="incrementLikes(technology)" value="Like" class="btn btn-success" />
+                        <input type="button" ng-click="incrementDislikes(technology)" value="Dislike" class="btn btn-danger" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

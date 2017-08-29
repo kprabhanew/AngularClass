@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="script.js"></script>
+    <style type="text/css">
+    label {
+    width: 250px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input {
+    vertical-align: middle;
+}
+
+.valueItems {
+    display: inline-block;
+    vertical-align: middle;
+}
+    </style>
+
+</head>
+
+<body ng-app>
+    <div>
+        <p>A boolean true or false value is stored in the <strong>basicCheckValue</strong> model variable.</p>
+        <label for="basicCheck">Basic checkbox:</label>
+        <input id="basicCheck" type="checkbox" ng-model="basicCheckValue" />
+
+        <span class="valueItems"><strong>Value:</strong> {{basicCheckValue}}</span><br />
+        <hr>
+        <p>we specify custom string values to store in the associated
+            <strong>customValCheckValue</strong> model variable.</p>
+        <label for="customValCheck">Checkbox with custom values:</label>
+        <input id="customValCheck" type="checkbox" ng-model="customValCheckValue" ng-true-value="'I am right one'" ng-false-value="'I am wrong one'" />
+
+        <span class="valueItems"><strong>Value:</strong> {{customValCheckValue}}</span>
+    </div>
+</body>
+
+</html>

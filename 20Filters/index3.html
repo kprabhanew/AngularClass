@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app3.js"></script>
+</head>
+
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <div class="form-group ">
+            <label class="control-label col-md-3">Search :</label>
+            <input type="text" placeholder="Search employees" class="form-control col-md-4" ng-model="searchText" />
+        </div>
+
+        <br/>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchText">
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.gender }} </td>
+                    <td> {{ employee.salary }} </td>
+                    <td> {{ employee.city }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

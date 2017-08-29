@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        Sort By :
+        <select ng-model="sortColumn">
+            <option value="name">Name ASC</option>
+            <option value="+dateOfBirth">Date of Birth ASC</option>
+            <option value="+gender">Gender DES</option>
+            <option value="-salary">Salary DESC</option>
+        </select>
+        <br /><br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn">
+                    <td>
+                        {{ employee.name }}
+                    </td>
+                    <td>
+                        {{ employee.dateOfBirth | date:"dd/MM/yyyy" }}
+                    </td>
+                    <td>
+                        {{ employee.gender }}
+                    </td>
+                    <td>
+                        {{ employee.salary }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

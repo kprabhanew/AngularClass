@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app4.js"></script>
+</head>
+
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        <input type="text" placeholder="Search name" ng-model="searchText.name" />
+        <input type="text" placeholder="Search gender" ng-model="searchText.gender" />
+        
+        <input type="checkbox" ng-model="exactMatch" /> Exact Match
+        <br />
+        <pre>{{exactMatch | json}}</pre>
+        <br /><br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter: searchText : exactMatch">
+                    <td> {{ employee.name }} </td>
+                    <td> {{ employee.gender }} </td>
+                    <td> {{ employee.salary }} </td>
+                    <td> {{ employee.city }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

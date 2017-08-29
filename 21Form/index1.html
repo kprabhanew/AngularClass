@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app1.js"></script>
+    <style type="text/css">
+            label {
+            width: 80px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        input {
+            width: 150px;
+            vertical-align: middle;
+        }
+
+        textarea {
+            width: 150px;
+            height: 100px;
+            vertical-align: middle;
+        }
+
+        .valueItems {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+
+        .ng-valid-email {
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+
+<body ng-app>
+    <div>
+        <label for="textEdit">Text:</label>
+        <input id="textEdit" type="text" ng-model="textValue" />
+        <span><strong style="color:red;">{{textValue | json}}</strong></span> &nbsp;
+        <span class="valueItems"><strong>Value:</strong> {{textValue}}</span><br />
+    
+        <label for="emailEdit">E-mail:</label>
+        <input id="emailEdit" type="email" ng-model="emailValue" />
+        <span><strong style="color:red;">{{emailValue | json}}</strong></span> &nbsp;
+        <span class="valueItems"><strong>Value:</strong> {{emailValue}}</span><br />
+    
+        <label for="urlEdit">URL:</label>
+        <input id="urlEdit" type="url" ng-model="urlValue" />
+        <span><strong style="color:red;">{{urlValue | json}}</strong></span> &nbsp;
+        <span class="valueItems"><strong>Value:</strong> {{urlValue}}</span><br />
+    
+        <label for="passwordEdit">Password:</label>
+        <input id="passwordEdit" type="password" ng-model="passwordValue" />
+        <span><strong style="color:red;">{{passwordValue | json}}</strong></span> &nbsp;
+        <span class="valueItems"><strong>Value:</strong> {{passwordValue}}</span><br />
+    
+        <label for="numberEdit">Number:</label>
+        <input id="numberEdit" type="number" ng-model="numberValue" />&nbsp;
+        <span><strong style="color:red;">{{numberValue | json}}</strong></span> &nbsp;
+        <span class="valueItems"><strong>Value:</strong> {{numberValue}}</span><br />
+    
+        <label for="textareaEdit">Text area:</label>
+        <textarea id="textareaEdit" ng-model="textareaValue"></textarea>
+        <span class="valueItems"><strong>Value:</strong> {{textareaValue}}</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <style type="text/css">
+        label {
+       width: 150px;
+       display: inline-block;
+       vertical-align: middle;
+   }
+
+   input {
+       vertical-align: middle;
+   }
+    </style>
+    </head>
+
+<body ng-app>
+
+    <div>
+        <label for="redRadio">Red Color:</label>
+        <input id="redRadio" type="radio" ng-model="colorValue" value="red" /><br />
+
+        <label for="greenRadio">Green color:</label>
+        <input id="greenRadio" type="radio" ng-model="colorValue" value="green" /><br />
+
+        <label for="blueRadio">Blue Color:</label>
+        <input id="blueRadio" type="radio" ng-model="colorValue" value="blue" /><br />
+        <br />
+        <strong>Selected color:</strong> {{colorValue}}<br />
+        <hr>
+        <br />
+        <label for="pearRadio">Pear:</label>
+        <input id="pearRadio" type="radio" ng-model="fruitValue" value="pear" /><br />
+
+        <label for="peachRadio">Peach:</label>
+        <input id="peachRadio" type="radio" ng-model="fruitValue" value="peach" /><br />
+
+        <label for="apricotRadio">Apricot:</label>
+        <input id="apricotRadio" type="radio" ng-model="fruitValue" value="apricot" /><br />
+        <br />
+        <strong>Selected fruit:</strong> {{fruitValue}}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <style type="text/css">
+    .ng-dirty{
+        border: 1px solid red;
+    }
+    #textCtrl.ng-dirty{
+        background: green;
+        color: white;
+    }
+    </style>
+
+</head>
+
+<body ng-app="mainModule">
+    <div ng-controller="mainController">
+        <div id="defaultValidationClassesPart">
+            <form name="testForm" novalidate>
+                <label>Text:
+          <input type="text"
+                 name="formText"   
+                 required                    
+                 ng-model="formTextValue"
+                 ng-minlength="3"
+                 ng-maxlength="10"
+                 ng-pattern="/^[A-Za-z0-9]+$/" id="textCtrl" />
+        </label><br />
+                <strong>State:</strong> {{getItemState(testForm.formText)}}<br />
+                <strong>Error messages:</strong><br />
+
+                <div ng-if="testForm.formText.$error.required">This field is required : {{testForm.formText.$error.required}}<br /></div>
+                <div ng-if="testForm.formText.$error.minlength">The text is too short : {{testForm.formText.$error.minlength}}<br /></div>
+                <div ng-if="testForm.formText.$error.maxlength">The text is too long<br /></div>
+                <div ng-if="testForm.formText.$error.pattern">Invalid text format<br /></div>
+                <div ng-if="testForm.$valid">No errors : {{testForm.$valid}}<br /></div>
+                <strong>Error:</strong><br />
+                <textarea>{{getItemError(testForm.formText) | json}}</textarea><br />
+                <br />
+                <hr/>
+                <label>E-mail:
+          <input type="email"
+                 name="formEmail"
+                 ng-model="formEmailValue" />
+        </label><br />
+                <strong>State:</strong> {{getItemState(testForm.formEmail)}}<br />
+                <strong>Error messages:</strong><br />
+                <div ng-show="testForm.formEmail.$error.email">Invalid e-mail address<br /></div>
+                <div ng-if="testForm.formEmail.$valid">No errors<br /></div>
+                <strong>Error:</strong><br />
+                <textarea>{{getItemError(testForm.formEmail) | json}}</textarea><br />
+                <br />
+                <hr/>
+                <strong>Form state:</strong> {{getItemState(testForm)}}<br />
+                <strong>Form error:</strong><br />
+                <textarea>{{getItemError(testForm) | json}}</textarea><br />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
