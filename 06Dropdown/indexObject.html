@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mainModule">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-controller="mainController" style="border: 1px solid red;">
+    <!-- label for (key, value) in object -->
+    <label for="colorsObjectSel">Object select 1:</label>
+    <select id="colorsObjectSel" ng-model="colorsObjectValue" ng-options="code for (code, name) in colorsObject">
+        <option value="">[No color]</option>
+    </select>
+    <br />
+    <br />
+    <strong>Selected color:</strong> {{colorsObjectValue}}<br />
+    <br />
+    <hr />
+    <!-- select as label for (key, value) in object -->
+    <label for="peopleObjectSel1">Object select 2:</label>
+    <select id="peopleObjectSel1" ng-model="peopleObjectValue1" ng-options="id as person.firstName for (id, person) in peopleObject">
+        <option value="">[No person]</option>
+    </select>
+    <br />
+    <br />
+    <strong>Selected person ID:</strong> {{peopleObjectValue1}}<br />
+    <br />
+    <hr />
+    <!-- label group by group for (key, value) in object -->
+    <label for="peopleObjectSel2">Object select 3:</label>
+    <select id="peopleObjectSel2" ng-model="peopleObjectValue2" ng-options="person.firstName as person.lastName group by person.Gender for (id, person) in peopleObject">
+        <option value="">[No person]</option>
+    </select><br />
+    <br />
+    <strong>Selected person:</strong><br />
+    <textarea>{{peopleObjectValue2 | json}}</textarea><br />
+    <br />
+</body>
+
+</html>

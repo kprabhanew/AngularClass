@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Basic Introduction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="app">
+    <h1 style="color:red">Shared Scope</h1>
+    <h2>Parent(Controller) & Child (Directive)</h2>
+    <h3>The changes doing in (parent- Controller) , it will affect all the place (child - Directive)</h3>
+    <div id="div1" ng-controller="sample">
+        Controller: a = {{a}}, b = {{b}}
+        <hr /> a = <input type="text" ng-model="a" />
+        <hr/> b = <input type="text" ng-model="b" /> <br/>
+        <hr> Directive Instance 1:
+        <div message></div>
+        <br> Directive Instance 2:
+        <div message></div><br>
+    </div>
+</body>
+
+</html>
